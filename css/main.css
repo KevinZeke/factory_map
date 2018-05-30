@@ -1,0 +1,68 @@
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: "微软雅黑";
+}
+
+* {
+    transition: ease-in-out .2s;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+#r-result {
+    width: 100%;
+}
+
+.BMapLabel {
+    display: inline-block;
+    max-width: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+#ctrl {
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 3px;
+    /*height: 100%;*/
+}
+
+#ctrl .f-list {
+
+}
+
+#ctrl li {
+    padding: 8px;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid #6fe9ff;
+}
+
+#ctrl li:hover {
+    background-color: #a8f7ff;
+}
+
+#ctrl li:nth-child(odd) {
+    /*background-color: #b9ebff;*/
+}
