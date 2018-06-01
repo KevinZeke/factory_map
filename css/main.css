@@ -45,6 +45,8 @@ body {
     right: 0;
     top: 0;
     border-radius: 3px;
+    max-height: 100%;
+    overflow: auto;
     /*height: 100%;*/
 }
 
@@ -52,11 +54,19 @@ body {
 
 }
 
+#ctrl ul{
+    width: 100%;
+}
 #ctrl li {
     padding: 8px;
     cursor: pointer;
     width: 100%;
     border-bottom: 1px solid #6fe9ff;
+}
+
+#ctrl li.active {
+    font-weight: bolder;
+    background-color: #a8f7ff;
 }
 
 #ctrl li:hover {
@@ -65,4 +75,21 @@ body {
 
 #ctrl li:nth-child(odd) {
     /*background-color: #b9ebff;*/
+}
+
+#detail {
+    background-color: #fff;
+    /*height: 200px;*/
+    max-height: 100%;
+    overflow: auto;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    border-radius: 5px;
+}
+
+#detail-table th{
+    text-align: center;!important;
 }

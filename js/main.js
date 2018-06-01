@@ -4,7 +4,9 @@ require.config({
         common: "./common/com",
         ctrl: "./common/ctrl",
         map: "./map/map",
+        chart: "./chart/echartsTool",
         image: "../lib/image",
+        config: "./config",
         //$:"../lib/jquery.min"
     }
 });
@@ -15,22 +17,21 @@ require(["factory", "common", "map", "ctrl"], function (factory, common, map, ct
         alert('请使用支持canvas功能的浏览器');
     }
 
-    var factoryPoints = factory.getAllFactoriesinfo();
+    factory.getAllFactoriesinfo(function (factoryPoints) {
 
-    var curMap = map.init("container");
+        var curMap = map.init("container");
 
-    //console.log(curMap);
+        curMap.mark(factoryPoints, function (marker, info) {
+            marker.addEventListener('click', function () {
+                ctrl.renderFactoryDetail(info.name);
+            })
+        });
 
-    curMap.mark(factoryPoints, function (marker) {
-        marker.addEventListener('click', function () {
-            alert(1);
-        })
+        ctrl.renderFactoryList(factoryPoints, curMap);
+
+        curMap.heat(factoryPoints);
+
     });
-
-    ctrl.renderFactoryList(factoryPoints, curMap);
-
-
-    curMap.heat(factoryPoints);
 
 
 });

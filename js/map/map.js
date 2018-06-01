@@ -18,6 +18,32 @@ define(["config"], function (config) {
     Map.prototype.setGradient = setGradient;
     Map.prototype.openHeatmap = openHeatmap;
     Map.prototype.closeHeatmap = closeHeatmap;
+    Map.prototype.addCtrl = function () {
+        var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});
+        var top_left_navigation = new BMap.NavigationControl();
+        var top_right_navigation = new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_RIGHT,
+            type: BMAP_NAVIGATION_CONTROL_SMALL
+        });
+        this._map.addControl(top_left_control);
+        this._map.addControl(top_left_navigation);
+        this._map.addControl(top_right_navigation);
+
+        var mapType1 = new BMap.MapTypeControl(
+            {mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP]}
+        );
+        var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_RIGHT});
+
+        var overView = new BMap.OverviewMapControl();
+        var overViewOpen = new BMap.OverviewMapControl(
+            {isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_LEFT}
+        );
+        //添加地图类型和缩略图
+        this._map.addControl(mapType1);          //2D图，卫星图
+        this._map.addControl(mapType2);          //左上角，默认地图控件
+        this._map.addControl(overView);          //添加默认缩略地图控件
+        this._map.addControl(overViewOpen);      //右下角，打开
+    }
 
     function create() {
         this._map = new BMap.Map(this.id);             // 创建地图实例
@@ -25,6 +51,7 @@ define(["config"], function (config) {
         this._map.centerAndZoom(point, config.zoomLv); // 初始化地图，设置中心点坐标和地图级别
         this._map.setCurrentCity(config.currentCity);  //设置当前显示城市
         this._map.enableScrollWheelZoom();             // 允许滚轮缩放
+        this.addCtrl();
         return this;
     }
 
