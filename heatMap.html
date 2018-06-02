@@ -15,7 +15,8 @@
     </head>
 <body>
 <div id="container">
-    <h4 class="text-center"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>  若无法显示地图或工厂位置信息，请检查网络设置</h4>
+    <h4 class="text-center"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+        若无法显示地图或工厂位置信息，请检查网络设置</h4>
 </div>
 <div id="r-result">
     <!--<input type="button"  onclick="openHeatmap();" value="显示热力图"/><input type="button"  onclick="closeHeatmap();" value="关闭热力图"/>-->
@@ -28,8 +29,92 @@
     <ul class="f-list">
     </ul>
 </div>
+
+<div id="head-ctrl" class="ctrl-box col-md-8 ctrl-common"
+     style="height: 200px;background-color:#fff; position: absolute;top: 0;left: 0;">
+    <button type="button" class="ctrl-close close"
+            style="font-size: 30px;position: absolute;top: 2px;right: 5px;"
+            aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="col-md-3 head-chart" id="h-c-1" style="height: 100%"></div>
+    <div class="col-md-3 head-chart" id="h-c-2" style="height: 100%"></div>
+    <div class="col-md-3 head-chart" id="h-c-3" style="height: 100%"></div>
+    <div class="col-md-3 head-chart" id="h-c-4" style="height: 100%"></div>
+</div>
+<div id="head-ctrl-2" class="ctrl-box col-md-2 col-md-offset-8 ctrl-common"
+     style="height: 200px;background-color:#fff; position: absolute;top: 0;left: 0;">
+    <button type="button" class="ctrl-close close"
+            style="font-size: 30px;position: absolute;top: 2px;right: 5px;"
+            aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4>共: <span style="font-size: 30px;color: steelblue">11122233</span></h4>
+    <table class="table  table-striped">
+        <tbody>
+        <tr style="background-color:#ff776f;">
+            <th>A</th>
+            <th>B</th>
+            <th>V</th>
+            <th>J</th>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="right-ctrl" class="ctrl-box col-md-2 ctrl-common" style="height: 500px;position: absolute;top: 200px;">
+    <button type="button" class="ctrl-close close"
+            style="font-size: 30px;position: absolute;top: 2px;right: 5px;"
+            aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div>
+        <h4>共: <span style="font-size: 28px;color: steelblue">112,233</span>吨</h4>
+        <h4>共: <span style="font-size: 28px;color: #ff5849">555,888</span>吨</h4>
+    </div>
+    <hr>
+    <table class="table table-bordered  table-striped">
+        <tbody>
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>V</th>
+            <th>J</th>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>5</td>
+            <td>-</td>
+            <td>8</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div style="width: 100%;height: 200px;" id="r-c">
+
+    </div>
+</div>
+
+
 <div id="detail" hidden class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-    <button type="button" id="detail-close" class="close"
+    <button type="button" id="detail-close" class="ctrl-close close"
             style="font-size: 30px;position: absolute;top: 2px;right: 5px;"
             aria-label="Close">
         <span aria-hidden="true">&times;</span>

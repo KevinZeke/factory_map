@@ -37,6 +37,12 @@ body {
     box-shadow: 1px 1px 1px 1px #ccc;
 }
 
+.ctrl-common {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
+
 #ctrl {
     background-color: #fff;
     box-shadow: 1px 1px 1px 1px #ccc;
@@ -54,9 +60,10 @@ body {
 
 }
 
-#ctrl ul{
+#ctrl ul {
     width: 100%;
 }
+
 #ctrl li {
     padding: 8px;
     cursor: pointer;
@@ -86,10 +93,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow: 1px 2px 5px 2px #ccc;
     border-radius: 5px;
 }
 
-#detail-table th{
-    text-align: center;!important;
+#detail-table th {
+    text-align: center;
+!important;
 }

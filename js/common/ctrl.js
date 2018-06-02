@@ -13,7 +13,7 @@ define(['common'], function (common) {
     var $fdetail = $('#detail');
 
     //详情关闭按钮
-    var $detailclose = $('#detail-close');
+    var $detailclose = $('.ctrl-close');
 
     //详情日期控件
     var date = new Date();
@@ -33,6 +33,33 @@ define(['common'], function (common) {
 
     //数据显示图表
     var $fchart = $('#f-chart');
+
+
+    //临时
+    (function () {
+        for (let i = 1; i < 5; i++) {
+            require(['chart'], function (chart) {
+                chart.ChartsCtrl.pie()
+                    .setTitle('图表演示' + i)
+                    .setData([
+                        {item: 'a', value: parseInt(Math.random() * 100)},
+                        {item: 'b', value: parseInt(Math.random() * 120)},
+                    ])
+                    .render('h-c-' + i);
+            });
+        }
+        require(['chart'], function (chart) {
+            chart.ChartsCtrl.stack()
+                .y(['A', 'B', 'C', 'D'])
+                .x([
+                    {item: 'A', value: [parseInt(Math.random() * 120),parseInt(Math.random() * 120)]},
+                    {item: 'B', value: [parseInt(Math.random() * 120),parseInt(Math.random() * 120)]},
+                    {item: 'C', value: [parseInt(Math.random() * 120),parseInt(Math.random() * 120)]},
+                    {item: 'D', value: [parseInt(Math.random() * 120),parseInt(Math.random() * 120),parseInt(Math.random() * 120),parseInt(Math.random() * 120)]},
+                ])
+                .render('r-c');
+        });
+    })();
 
 
     $fsearch.on('input', function () {
@@ -55,7 +82,7 @@ define(['common'], function (common) {
     });
 
     $detailclose.on('click', function () {
-        $fdetail.hide();
+        $(this).parent().hide();
     })
 
     $monthInput.find('input:eq(0)').val(cur);
